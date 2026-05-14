@@ -1,0 +1,16 @@
+NAME,1,2,3,4,5,6,7,8,9
+Art 10S,Y,Y,N,N,N,N,Y,N,N
+Band - Instrumental 10S,N,N,Y,N,N,N,N,N,N
+Choral 10S,N,N,N,N,N,N,N,Y,N
+English 10F,Y,N,N,Y,Y,N,N,N,N
+Francais 10F,N,N,N,N,Y,N,N,N,N
+French 10F,N,N,N,N,N,Y,N,Y,N
+Intro to AI 20G,Y,N,N,N,N,N,N,Y,N
+Jazz Ensemble 10S,N,N,N,Y,N,N,N,N,N
+Life Works 10S,N,N,N,N,N,N,N,Y,N
+Mathematics 10F,N,Y,N,N,Y,N,N,Y,N
+Physical Education 10F,Y,Y,Y,N,N,Y,Y,N,N
+Physical Education 10F - FF,N,N,N,N,N,N,N,N,Y
+Science 10F,N,N,Y,Y,N,Y,N,Y,N
+Social Studies 10F,N,Y,N,Y,N,N,Y,N,N
+Hello,N,Y,N,Y,N,N,Y,N,N

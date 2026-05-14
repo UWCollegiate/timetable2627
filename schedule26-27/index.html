@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Cache-Control" content="no-store, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Redirecting...</title>
+    <script>
+        async function ensureFreshRedirectPage() {
+            let url = new URL(window.location.href);
+            if (url.searchParams.get("reloaded") === "1") return;
+
+            let response = await fetch(`${url.pathname}?t=${Date.now()}`, {
+                cache: "no-store",
+                method: "HEAD"
+            });
+            let lastModified = response.headers.get("last-modified");
+
+            if (lastModified && document.lastModified && lastModified !== document.lastModified) {
+                url.searchParams.set("reloaded", "1");
+                url.searchParams.set("t", Date.now().toString());
+                window.location.replace(url.toString());
+                return false;
+            }
+
+            return true;
+        }
+
+        window.addEventListener("pageshow", (event) => {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+
+        ensureFreshRedirectPage().then((ready) => {
+            if (ready) window.location.replace(`course/index.html?t=${Date.now()}`);
+        });
+    </script>
+</head>
+<body>
+    <p><a href="course/index.html">Click here</a> if you are not automatically redirected.</p>
+</body>
+</html>
