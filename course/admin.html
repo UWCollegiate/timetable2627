@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-store, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>course admin editor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <script>
+        window.assetVersion = Date.now();
+        let stylesheet = document.createElement("link");
+        stylesheet.rel = "stylesheet";
+        stylesheet.href = `global.css?v=${window.assetVersion}`;
+        document.head.appendChild(stylesheet);
+    </script>
+</head>
+<body>
+    <div id="top">
+        <a href="index.html" onclick="prepareForNavigation()">
+            <h1>Course Admin Editor</h1>
+        </a>
+    </div>
+    <div id="main">
+        <div id="adminPage">
+            <div id="adminToolbar">
+                <label class="adminField">
+                    <span>File</span>
+                    <select id="adminFileSelect"></select>
+                </label>
+                <button id="adminLoad">Load</button>
+                <button id="adminAddRow">Add Course</button>
+                <button id="adminSort">Sort A-Z</button>
+                <button id="adminSave">Save As CSV</button>
+                <button id="adminCopy">Copy CSV</button>
+            </div>
+            <div id="adminStatus"></div>
+            <div id="adminHelp">
+                `N` means the course is not offered in that slot. Any other value is the instructor initials for that slot.
+            </div>
+            <div id="adminTableWrap">
+                <table id="adminTable">
+                    <thead></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        function appendScript(src, type = "text/javascript") {
+            let script = document.createElement("script");
+            script.src = `${src}?v=${window.assetVersion}`;
+            script.type = type;
+            document.body.appendChild(script);
+        }
+
+        appendScript("js/global.js");
+        appendScript("js/admin.js");
+    </script>
+</body>
+</html>

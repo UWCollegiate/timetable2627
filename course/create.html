@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta http-equiv="Cache-Control" content="no-store, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>course selector</title>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <script>
+        window.assetVersion = Date.now();
+        let stylesheet = document.createElement("link");
+        stylesheet.rel = "stylesheet";
+        stylesheet.href = `global.css?v=${window.assetVersion}`;
+        document.head.appendChild(stylesheet);
+    </script>
+</head>
+<body>
+    <div id="top" class="top--simple">
+        <a href="index.html" onclick="prepareForNavigation()">
+            <h1>Course Selector</h1>
+        </a>
+    </div>
+    <div id="main">
+        <div id="selectionContainer">
+            <button id="print">Print</button>
+            <span id="selectionText"></span>
+        </div>
+        <button id="left">&lt;</button>
+        <button id="right">&gt;</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script>
+        function appendScript(src, type = "text/javascript") {
+            let script = document.createElement("script");
+            script.src = `${src}?v=${window.assetVersion}`;
+            script.type = type;
+            document.body.appendChild(script);
+        }
+
+        appendScript("js/global.js");
+        appendScript("js/create.js", "module");
+    </script>
+</body>
+</html>
